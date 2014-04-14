@@ -1,0 +1,75 @@
+var countries = {
+	A2: ['AF','AL','DZ','AS','AD','AO','AI','AQ','AG','AR','AM','AW','AU','AT','AZ','BS','BH','BD','BB','BY','BE','BZ','BJ','BM','BT','BO','BA','BW','BV','BR','IO','BN','BG','BF','BI','KH','CM','CA','CV','KY','CF','TD','CL','CN','CX','CC','CO','KM','CG','CD','CK','CR','CI','HR','CU','CY','CZ','DK','DJ','DM','DO','TP','EC','EG','SV','GQ','ER','EE','ET','FK','FO','FJ','FI','FR','FX','GF','PF','TF','GA','GM','GE','DE','GH','GI','GR','GL','GD','GP','GU','GT','GN','GW','GY','HT','HM','VA','HN','HK','HU','IS','IN','ID','IR','IQ','IE','IL','IT','JM','JP','JO','KZ','KE','KI','KP','KR','KW','KG','LA','LV','LB','LS','LR','LY','LI','LT','LU','MO','MK','MG','MW','MY','MV','ML','MT','MH','MQ','MR','MU','YT','MX','FM','MD','MC','MN','ME','MS','MA','MZ','MM','NA','NR','NP','NL','AN','NC','NZ','NI','NE','NG','NU','NF','MP','NO','OM','PK','PW','PA','PG','PY','PE','PH','PN','PL','PT','PR','QA','RE','RO','RU','RW','KN','LC','VC','WS','SM','ST','SA','SN','RS','SC','SL','SG','SK','SI','SB','SO','ZA','SS','GS','ES','LK','SH','PM','SD','SR','SJ','SZ','SE','CH','SY','TW','TJ','TZ','TH','TG','TK','TO','TT','TN','TR','TM','TC','TV','UG','UA','AE','GB','US','UM','UY','UZ','VU','VE','VN','VG','VI','WF','EH','YE','ZM','ZW'],
+	A3: ['AFG','ALB','DZA','ASM','AND','AGO','AIA','ATA','ATG','ARG','ARM','ABW','AUS','AUT','AZE','BHS','BHR','BGD','BRB','BLR','BEL','BLZ','BEN','BMU','BTN','BOL','BIH','BWA','BVT','BRA','IOT','BRN','BGR','BFA','BDI','KHM','CMR','CAN','CPV','CYM','CAF','TCD','CHL','CHN','CXR','CCK','COL','COM','COG','COD','COK','CRI','CIV','HRV','CUB','CYP','CZE','DNK','DJI','DMA','DOM','TMP','ECU','EGY','SLV','GNQ','ERI','EST','ETH', 'FLK','FRO','FJI','FIN','FRA','FXX','GUF','PYF','ATF','GAB','GMB','GEO','DEU','GHA','GIB','GRC','GRL','GRD','GLP','GUM','GTM','GIN','GNB','GUY','HTI','HMD','VAT','HND','HKG','HUN','ISL','IND','IDN','IRN','IRQ','IRL','ISR','ITA','JAM','JPN','JOR','KAZ','KEN','KIR','PRK','KOR','KWT','KGZ','LAO','LVA','LBN','LSO','LBR','LBY','LIE','LTU','LUX','MAC','MKD','MDG','MWI','MYS','MDV','MLI','MLT','MHL','MTQ','MRT','MUS','MYT','MEX','FSM','MDA','MCO','MNG','MNE','MSR','MAR','MOZ','MMR','NAM','NRU','NPL','NLD','ANT','NCL','NZL','NIC','NER','NGA','NIU','NFK','MNP','NOR','OMN','PAK','PLW','PAN','PNG','PRY','PER','PHL','PCN','POL','PRT','PRI','QAT','REU','ROM','RUS','RWA','KNA','LCA','VCT','WSM','SMR','STP','SAU','SEN','SRB','SYC','SLE','SGP','SVK','SVN','SLB','SOM','ZAF','SSD','SGS','ESP','LKA','SHN','SPM','SDN','SUR','SJM','SWZ','SWE','CHE','SYR','TWN','TJK','TZA','THA','TGO','TKL','TON','TTO','TUN','TUR','TKM','TCA','TUV','UGA','UKR','ARE','GBR','USA','UMI','URY','UZB','VUT','VEN','VNM','VGB','VIR','WLF','ESH','YEM','ZMB','ZWE'],
+	NUM: ['004','008','012','016','020','024','660','010','028','032','051','533','036','040','031','044','048','050','052','112','056','084','204','060','064','068','070','072','074','076','086 ','096','100','854','108','116','120','124','132','136','140','148','152','156','162','166','170','174','178','180','184','188','384','191','192','196','203','208','262','212','214','626','218','818','222','226','232','233','231','238','234','242','246','250','249','254','258','260','266','270','268','276','288','292','300','304','308','312','316','320','324','624','328','332','334','336','340','344','348','352','356','360','364','368','372','376','380','388','392','400','398','404','296','408','410','414','417','418','428','422','426','430','434','438','440','442','446','807','450','454','458','462','466','470','584','474','478','480','175','484','583','498','492','496','499','500','504','508','104','516','520','524','528','530','540','554','558','562','566','570','574','580','578','512','586','585','591','598','600','604','608','612','616','620','630','634','638','642','643','646','659','662','670','882','674','678','682','686','688','690','694','702','703','705','090','706','729','710','239','724','144','654','666','736','740','744','748','752','756','760','158','762','834','764','768','772','776','780','788','792','795','796','798','800','804','784','826','840','581','858','860','548','862','704','092','850','876','732','887','894','716'],
+	COUNTRY: ['AFGHANISTAN','ALBANIA','ALGERIA','AMERICAN SAMOA','ANDORRA','ANGOLA','ANGUILLA','ANTARCTICA','ANTIGUA AND BARBUDA','ARGENTINA','ARMENIA','ARUBA','AUSTRALIA','AUSTRIA','AZERBAIJAN','BAHAMAS','BAHRAIN','BANGLADESH','BARBADOS','BELARUS','BELGIUM','BELIZE','BENIN','BERMUDA','BHUTAN','BOLIVIA','BOSNIA AND HERZEGOWINA','BOTSWANA','BOUVET ISLAND','BRAZIL','BRITISH INDIAN OCEAN TERRITORY','BRUNEI DARUSSALAM','BULGARIA','BURKINA FASO','BURUNDI','CAMBODIA','CAMEROON','CANADA','CAPE VERDE','CAYMAN ISLANDS','CENTRAL AFRICAN REPUBLIC','CHAD','CHILE','CHINA','CHRISTMAS ISLAND','COCOS (KEELING) ISLANDS','COLOMBIA','COMOROS','CONGO','CONGO, THE DRC','COOK ISLANDS','COSTA RICA','COTE D\'IVOIRE','CROATIA (local name: Hrvatska)','CUBA','CYPRUS','CZECH REPUBLIC','DENMARK','DJIBOUTI','DOMINICA','DOMINICAN REPUBLIC','EAST TIMOR','ECUADOR','EGYPT','EL SALVADOR','EQUATORIAL GUINEA','ERITREA','ESTONIA','ETHIOPIA','FALKLAND ISLANDS (MALVINAS)','FAROE ISLANDS','FIJI','FINLAND','FRANCE','FRANCE, METROPOLITAN','FRENCH GUIANA','FRENCH POLYNESIA','FRENCH SOUTHERN TERRITORIES','GABON','GAMBIA','GEORGIA','GERMANY','GHANA','GIBRALTAR','GREECE','GREENLAND','GRENADA','GUADELOUPE','GUAM','GUATEMALA','GUINEA','GUINEA-BISSAU','GUYANA','HAITI','HEARD AND MC DONALD ISLANDS','HOLY SEE (VATICAN CITY STATE)','HONDURAS','HONG KONG','HUNGARY','ICELAND','INDIA','INDONESIA','IRAN (ISLAMIC REPUBLIC OF)','IRAQ','IRELAND','ISRAEL','ITALY','JAMAICA','JAPAN','JORDAN','KAZAKHSTAN','KENYA','KIRIBATI','KOREA, D.P.R.O.','KOREA, REPUBLIC OF','KUWAIT','KYRGYZSTAN','LAOS ','LATVIA','LEBANON','LESOTHO','LIBERIA','LIBYAN ARAB JAMAHIRIYA','LIECHTENSTEIN','LITHUANIA','LUXEMBOURG','MACAU','MACEDONIA','MADAGASCAR','MALAWI','MALAYSIA','MALDIVES','MALI','MALTA','MARSHALL ISLANDS','MARTINIQUE','MAURITANIA','MAURITIUS','MAYOTTE','MEXICO','MICRONESIA, FEDERATED STATES OF','MOLDOVA, REPUBLIC OF','MONACO','MONGOLIA','MONTENEGRO','MONTSERRAT','MOROCCO','MOZAMBIQUE','MYANMAR (Burma) ','NAMIBIA','NAURU','NEPAL','NETHERLANDS','NETHERLANDS ANTILLES','NEW CALEDONIA','NEW ZEALAND','NICARAGUA','NIGER','NIGERIA','NIUE','NORFOLK ISLAND','NORTHERN MARIANA ISLANDS','NORWAY','OMAN','PAKISTAN','PALAU','PANAMA','PAPUA NEW GUINEA','PARAGUAY','PERU','PHILIPPINES','PITCAIRN','POLAND','PORTUGAL','PUERTO RICO','QATAR','REUNION','ROMANIA','RUSSIAN FEDERATION','RWANDA','SAINT KITTS AND NEVIS','SAINT LUCIA','SAINT VINCENT AND THE GRENADINES','SAMOA','SAN MARINO','SAO TOME AND PRINCIPE','SAUDI ARABIA','SENEGAL','SERBIA','SEYCHELLES','SIERRA LEONE','SINGAPORE','SLOVAKIA (Slovak Republic)','SLOVENIA','SOLOMON ISLANDS','SOMALIA','SOUTH AFRICA','SOUTH SUDAN','SOUTH GEORGIA AND SOUTH S.S.','SPAIN','SRI LANKA','ST. HELENA','ST. PIERRE AND MIQUELON','SUDAN','SURINAME','SVALBARD AND JAN MAYEN ISLANDS','SWAZILAND','SWEDEN','SWITZERLAND','SYRIAN ARAB REPUBLIC','TAIWAN, PROVINCE OF CHINA','TAJIKISTAN','TANZANIA, UNITED REPUBLIC OF','THAILAND','TOGO','TOKELAU','TONGA','TRINIDAD AND TOBAGO','TUNISIA','TURKEY','TURKMENISTAN','TURKS AND CAICOS ISLANDS','TUVALU','UGANDA','UKRAINE','UNITED ARAB EMIRATES','UNITED KINGDOM','UNITED STATES','U.S. MINOR ISLANDS','URUGUAY','UZBEKISTAN','VANUATU','VENEZUELA','VIET NAM','VIRGIN ISLANDS (BRITISH)','VIRGIN ISLANDS (U.S.)','WALLIS AND FUTUNA ISLANDS','WESTERN SAHARA','YEMEN','ZAMBIA','ZIMBABWE'],
+
+	getA2: function(c){
+		if(c.length != 2){
+			if(c.length == 3){
+				if(isNaN(parseInt(c))){
+					// a3
+					return countries.A2[countries.A3.indexOf(c.toUpperCase())];
+				} else {
+					// num
+					return countries.A2[countries.NUM.indexOf(c)];
+				}
+			} else {
+				// country
+				return countries.A2[countries.COUNTRY.indexOf(c.toUpperCase())];
+			}
+
+		}
+
+	},
+
+	getA3: function(c){
+		if(c.length != 2){
+			if(isNaN(parseInt(c))){
+				// country
+				return countries.A3[countries.COUNTRY.indexOf(c.toUpperCase())];
+			} else {
+				// num
+				return countries.A3[countries.NUM.indexOf(c)];
+			}
+
+		} else {
+			// a2
+			return countries.A3[countries.A2.indexOf(c.toUpperCase())];
+		}
+	},
+
+	getNum: function(c) {
+		if(c.length != 2){
+			if(c.length == 3){
+				// a3
+				return countries.NUM[countries.A3.indexOf(c.toUpperCase())];
+			} else {
+				// country
+				return countries.NUM[countries.COUNTRY.indexOf(c.toUpperCase())];
+			}
+
+		} else {
+			// a2
+			return countries.NUM[countries.A2.indexOf(c.toUpperCase())];
+		}
+	},
+
+	getCountry: function(c) {
+		if(c.length != 2){
+			if(isNaN(parseInt(c))){
+				// a3
+				return countries.COUNTRY[countries.A3.indexOf(c.toUpperCase())];
+			} else {
+				// num
+				return countries.COUNTRY[countries.NUM.indexOf(c)];
+			}
+
+		} else {
+			// a2
+			return countries.COUNTRY[countries.A2.indexOf(c.toUpperCase())];
+		}
+
+	}
+
+}
